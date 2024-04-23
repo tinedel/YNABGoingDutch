@@ -7,6 +7,11 @@
 const BankMapper = function (bankMap, bank) {
     const _map = bankMap.getMapping()[bank];
 
+    const preProcessLine = (line) => {
+        // abn amro needs some extra parsing before being ready to give all of the details of the transaction
+        // overriden in abnBankMapper.js
+    }
+
     const getLine = (line, fieldList) => {
         let returnLine = "";
 
